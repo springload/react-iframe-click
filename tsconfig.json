@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "esModuleInterop": true,
+        "outDir": "build",
+        "jsx": "react",
+        "declaration": true,
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "esnext",
+        "strict": true,
+        "lib": ["dom", "es6"]
+    },
+    "include": ["src/index.tsx", "custom.d.ts"]
+}
