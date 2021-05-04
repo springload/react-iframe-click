@@ -12,6 +12,19 @@ Because it's infering clicks by focus changes if the focus stays within the ifra
 
 This library is less than 1kb and has TypeScript bindings.
 
+# Usage
+
+```jsx
+import Iframe from 'react-iframe-click';
+
+// in a render...
+
+<Iframe
+    src="https://example.com"
+    onInferredClick={() => alert('You clicked')}
+></Iframe>;
+```
+
 # Requirements
 
 Peer dependency on React 16.8 or later.
