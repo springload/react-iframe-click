@@ -1,6 +1,6 @@
 {
     "name": "react-iframe-click",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -9,7 +9,7 @@
     },
     "devDependencies": {
         "@types/react": "^16.9.2",
-        "react": "^16.8.0",
+        "react": "^16.8.0 || ^17.0.0",
         "typescript": "^3.6.2"
     },
     "homepage": "https://github.com/springload/react-iframe-click/",
