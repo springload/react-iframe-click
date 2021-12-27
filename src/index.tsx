@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 
-interface IframeProps extends React.HTMLAttributes<HTMLIFrameElement> {
-    onInferredClick: (iframe: HTMLIFrameElement) => void;
+interface IframeProps
+	extends React.DetailedHTMLProps<
+		React.IframeHTMLAttributes<HTMLIFrameElement>,
+		HTMLIFrameElement
+	> {
+	onInferredClick: (iframe: HTMLIFrameElement) => void;
 }
 
-export default function Iframe(props: IframeProps): React.ReactElement {
+export default function Iframe({ onInferredClick, ...props }: IframeProps): React.ReactElement {
     const iframeRef = useRef<null | HTMLIFrameElement>(null);
 
     const iframeCallbackRef = useCallback(
@@ -23,7 +27,7 @@ export default function Iframe(props: IframeProps): React.ReactElement {
                 iframeRef.current === document.activeElement
             ) {
                 // infer a click event
-                props.onInferredClick(iframeRef.current);
+                onInferredClick(iframeRef.current);
             }
         };
 
@@ -32,7 +36,7 @@ export default function Iframe(props: IframeProps): React.ReactElement {
         return () => {
             window.removeEventListener('blur', onBlur);
         };
-    }, []);
+    }, [onInferredClick]);
 
     return <iframe {...props} ref={iframeCallbackRef} />;
 }
